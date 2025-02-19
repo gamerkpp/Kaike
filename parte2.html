@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1° teste</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, rgb(199, 3, 3), rgb(27, 32, 32)); /* Degradê na diagonal */
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Impede barras de rolagem */
+        }
+        .tela{
+            background-color: rgba(15, 14, 14, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 100px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            width: 300px;
+            animation: slideIn 1s ease-out; /* Animação de entrada do quadrado */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a rotação e a sombra */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0); /* Inicialmente sem sombra */
+            border: 3px solid transparent; /* Borda transparente inicial */
+            background-clip: padding-box; /* Garante que a borda seja visível sem cobrir o fundo */
+        }
+        
+        /* Animação de slide-in do quadrado */
+        @keyframes slideIn {
+            0% {
+                transform: translate(-50%, -60%);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        h1{
+            font-size: 24px;
+            margin: 0; /* Remove a margem do h1 */
+        }
+        input{
+            padding: 20px;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+        }
+
+        /* Animação para os botões */
+        button{
+            background: rgb(90, 40, 32);
+            top: 10px;
+            left: -100px;
+            border: none;
+            padding: 20px;
+            width: 100%;
+            border-radius: 20px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        /* Efeito hover do botão */
+        button:hover{
+            background-color: rgb(255, 0, 0);
+            transform: scale(1.1); /* Efeito de aumento no botão */
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5); /* Efeito de sombra */
+        }
+
+        /* Animação do texto "Feito por" */
+        .footer {
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            opacity: 0; /* Começa invisível */
+            animation: fadeIn 2s forwards 1s; /* Animação de fade-in */
+        }
+
+        /* Animação de fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Animação de inclinação ao passar o mouse sobre o quadrado */
+        .tela:hover {
+            transform: translate(-50%, -50%) rotateX(15deg); /* Inclina para cima/baixo */
+            box-shadow: 0 0 25px 5px rgba(255, 0, 0, 0.7); /* Sombra brilhante ao passar o mouse */
+            border: 3px solid rgb(255, 0, 0); /* Borda vermelha brilhante ao passar o mouse */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tela">
+        <h1>Bem vindo</h1>
+        <br><br>
+        <a href="https://github.com/gamerkpp/Kaike" target="_blank">
+            <button>Github</button>
+        </a>
+        <br><br>
+        <a href="https://discord.gg/vxkyYHzV" target="_blank">
+            <button>Portifolio(discord)</button>
+        </a>
+        
+        <!-- Texto "Feito por: Kaike/gamerkppyt" dentro da mesma div -->
+        <div class="footer">
+            Feito por: Kaike/gamerkppyt
+        </div>
+    </div>
+</body>
+</html>
